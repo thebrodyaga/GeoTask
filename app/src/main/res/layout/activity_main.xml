@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pickup.geotask.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.example.pickup.geotask.DelayAutoCompleteTextView
+                            android:id="@+id/geo_autocomplete_from"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="flagNoExtractUi|actionSearch"
+                            android:inputType="textCapSentences"
+                            android:hint="@string/from"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="35dp"
+                            android:dropDownWidth="fill_parent"
+                            />
+
+                        <ImageView
+                            android:id="@+id/geo_autocomplete_clear_from"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:visibility="gone"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginRight="12dp"
+                            />
+
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.example.pickup.geotask.DelayAutoCompleteTextView
+                            android:id="@+id/geo_autocomplete_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:imeOptions="flagNoExtractUi|actionSearch"
+                            android:inputType="textCapSentences"
+                            android:hint="@string/to"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="35dp"
+                            android:dropDownWidth="fill_parent"
+                            />
+
+                        <ImageView
+                            android:id="@+id/geo_autocomplete_clear_to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:visibility="gone"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginRight="12dp"
+                            />
+
+                    </FrameLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Поехали" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+
+</LinearLayout>

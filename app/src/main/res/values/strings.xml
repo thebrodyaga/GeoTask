@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GeoTask</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="address_found">Адрес найден</string>
+    <string name="no_address_found">Адрес не найден</string>
+    <string name="invalid_lat_long_used">Долгота или широта неверные</string>
+    <string name="service_not_available">Сервис не сработал</string>
+    <string name="to">Куда?</string>
+    <string name="from">Откуда?</string>
+</resources>
